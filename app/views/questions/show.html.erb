@@ -3,6 +3,7 @@
 <div>
 	<h2><%= @question.title %></h2>
 	<p><%= @question.body %></p>
+  <p><%= @question.formated_date %></p>
 
   <%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-secondary mb-2' %>
   <%= button_to 'Destroy', question_path(@question), method: :delete, class: 'btn btn-danger mb-2' %>

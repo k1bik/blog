@@ -3,3 +3,4 @@ Style/Documentation:
 AllCops:
   Exclude:
     - 'bin/bundle'
+    - 'config/initializers/**'

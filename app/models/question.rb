@@ -11,4 +11,8 @@ class Question < ApplicationRecord
 
   scope :today, -> { where(created_at: Time.zone.now.at_beginning_of_day...Time.zone.now) }
   scope :past_week, -> { where(created_at: Time.zone.now.at_beginning_of_week...Time.zone.now.at_end_of_week) }
+
+  def formated_date
+    created_at.strftime('%d.%m.%Y %H:%M')
+  end
 end
