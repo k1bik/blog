@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
 
     if @question.save
       redirect_to questions_path
+      flash[:success] = "Question created!"
     else
       render :new
     end
@@ -24,6 +25,7 @@ class QuestionsController < ApplicationController
   def update
     if @question.update question_params
       redirect_to questions_path
+      flash[:success] = "Question updated!"
     else
       render :new
     end
@@ -36,6 +38,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     redirect_to questions_path
+    flash[:success] = "Question deleted!"
   end
 
   private
