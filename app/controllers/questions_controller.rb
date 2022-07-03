@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[edit update show destroy]
+  before_action :set_question!, only: %i[edit update show destroy]
 
   def index
     @questions = Question.all
@@ -31,7 +31,10 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @answer = @question.answers.build
+    @answers = @question.answers.order created_ad: :desc
+  end
 
   def edit;	end
 
@@ -47,7 +50,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:title, :body)
   end
 
-  def set_question
+  def set_question!
     @question = Question.find(params[:id])
   end
 end

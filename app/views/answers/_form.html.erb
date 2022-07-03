@@ -1,0 +1,6 @@
+<%= simple_form_for [@question, @answer], defaults: { input_html: { class: 'mb-3' } } do |f|%>
+  <%= f.input :body, minlength: Answer::MIN_BODY_LENGTH, maxlength: Answer::MAX_BODY_LENGTH,
+    placeholder: 'Body for answer' %>
+  
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
