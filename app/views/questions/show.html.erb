@@ -14,14 +14,14 @@
 
 <%= render 'answers/form' %>
 
-<h2 class="mb-2 mt-4">Answers</h2>
+<% unless @question.answers.count == 0 %>
+  <h2 class="mb-2 mt-4">Answers</h2>
+<% end %>
 
 <% @answers.each do |answer| %>
-
   <%= answer.formated_date %>
   <p><%= answer.body %></p>
   <%= link_to 'Edit', edit_question_answer_path(@question, answer), class: 'btn btn-secondary mb-2' %>
   <%= button_to 'Destroy', question_answer_path(@question, answer), method: :delete, class: 'btn btn-danger mb-2' %>
-  
 <% end %>
 
