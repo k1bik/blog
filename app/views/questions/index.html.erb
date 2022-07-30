@@ -3,27 +3,12 @@
 
 <h1>Questions</h1>
 
-<%= link_to 'Create question', new_question_path, class: 'btn btn-primary btn-lg' %>
+<%= link_to 'Create question', new_question_path, class: 'btn btn-primary btn-lg mb-4' %>
 
 <% unless @questions.present? %>
   <%= render 'shared/empty' %>
 <% end %>
 
-<% @questions.each do |question| %>
-	<article class="card mt-3">
-    <div class="card-body">
-      <h4><%= question.title %></h2>
-      <section class="card-text">
-        <time>
-          <small><%= question.formated_date %></small>
-        </time>
-        <p class="my-2">
-          <%= question.body %>
-        </p>
-      </section>
-      <%= link_to 'Show', question_path(question), class: 'btn btn-primary mb-2' %> 
-      <%= link_to 'Edit', edit_question_path(question), class: 'btn btn-secondary mb-2' %>
-      <%= button_to 'Destroy', question_path(question), method: :delete, class: 'btn btn-danger' %>
-    </div>
-  </article>
-<% end %>
+<%= paginate @questions %>
+<%= render @questions %>
+<%= paginate @questions %>

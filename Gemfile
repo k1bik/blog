@@ -47,6 +47,7 @@ gem 'rubocop-rails', require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 gem 'bootstrap', '~> 5.1.3'
+gem 'kaminari'
 gem 'pry', '~> 0.13.1'
 gem 'simple_form'
 
@@ -56,6 +57,7 @@ gem 'simple_form'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 end
 
 group :development do
