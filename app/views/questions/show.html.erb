@@ -1,14 +1,11 @@
 <h1 class="mb-4">Question<%= @question.id %></h1>
 
-<div>
-	<h2><%= @question.title %></h2>
-	<p><%= @question.body %></p>
-  <p><%= @question.formated_date %></p>
-
-  <%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-secondary mb-2' %>
-  <%= button_to 'Destroy', question_path(@question), method: :delete, class: 'btn btn-danger mb-2' %>
-	<%= link_to "Back", questions_path, class: "btn btn-primary mb-5"%>
-</div>
+<h2><%= @question.title %></h2>
+<p><%= @question.body %></p>
+<p><%= @question.formated_date %></p>
+<%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-secondary mb-2' %>
+<%= button_to 'Destroy', question_path(@question), method: :delete, class: 'btn btn-danger mb-2' %>
+<%= link_to "Back", questions_path, class: "btn btn-primary mb-5"%>
 
 <h2 class="mb-2">Write your answer</h2>
 
