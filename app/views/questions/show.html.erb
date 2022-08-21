@@ -28,7 +28,7 @@
 
 <%= render 'answers/form' %>
 
-<% unless @question.answers.count == 0 %>
+<% unless @question.answers.all.size == 0 %>
   <h2 class="mb-2 mt-4">Answers</h2>
 <% end %>
 <%= paginate @answers %>
